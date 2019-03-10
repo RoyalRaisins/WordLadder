@@ -31,11 +31,11 @@ public class DictionaryTest extends TestCase {
      */
     public void testBuildLexicon() {
         System.out.println("buildLexicon");
-        String text = "";
+        String text = "bat\n";
         Dictionary instance = new Dictionary();
         instance.buildLexicon(text);
+        assertEquals(true,instance.Lexicon.containsKey("bat"));
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -43,13 +43,13 @@ public class DictionaryTest extends TestCase {
      */
     public void testHasWord() {
         System.out.println("hasWord");
-        String word = "";
+        String word = "bat";
         Dictionary instance = new Dictionary();
-        boolean expResult = false;
+        instance.Lexicon.put(word,1);
+        boolean expResult = true;
         boolean result = instance.hasWord(word);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -57,11 +57,12 @@ public class DictionaryTest extends TestCase {
      */
     public void testAddWord() {
         System.out.println("addWord");
-        String word = "";
+        String word = "bat";
         Dictionary instance = new Dictionary();
         instance.addWord(word);
+        if(!instance.hasWord("bat"))
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+            fail("The test case is a prototype.");
     }
     
 }

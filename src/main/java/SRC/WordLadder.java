@@ -15,6 +15,7 @@ import java.util.ArrayDeque;
 
         
 public class WordLadder {
+    Stack<String> path;
     public static void main(String[] arguments){
         try{
             WordLadder w = new WordLadder();
@@ -39,7 +40,9 @@ public class WordLadder {
             System.out.println(e.getMessage());
         }
     }
-    
+
+    WordLadder(){path = new Stack<>();}
+
     Stack<String> ladder(ArrayDeque<Stack<String>> paths, String des, Dictionary chosen,Dictionary lexicon){
         Stack<String> topLadder,newLadder;
         ArrayDeque<Stack<String>> newPaths = new ArrayDeque<>();
@@ -91,15 +94,16 @@ public class WordLadder {
         newLadder.push(newWord);
         return newLadder;
     }
-    
-    void printResult(Stack<String> ladder){
-        Stack<String> path = new Stack<>();
+
+    void printResult(Stack<String> ladder){  // Changed only to to fit in in the unit tests.
         while(!ladder.isEmpty()){
             path.push(ladder.pop());
         }
-        System.out.print(path.pop());
-        while(!path.isEmpty()){
-            System.out.print("->"+path.pop());
+        Stack<String> output = new Stack<>();
+        output.addAll(path);
+        System.out.print(output.pop());
+        while(!output.isEmpty()){
+            System.out.print("->"+ output.pop());
         }
         System.out.print("\n");
     }

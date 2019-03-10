@@ -32,15 +32,8 @@ public class WordLadderTest {
 
     /**
      * Test of main method, of class WordLadder.
-     */
-    @org.junit.Test
-    public void testMain() {
-        System.out.println("main");
-        String[] arguments = null;
-        WordLadder.main(arguments);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+     *
+     * /
 
     /**
      * Test of ladder method, of class WordLadder.
@@ -48,16 +41,21 @@ public class WordLadderTest {
     @org.junit.Test
     public void testLadder() {
         System.out.println("ladder");
-        ArrayDeque<Stack<String>> paths = null;
-        String des = "";
-        Dictionary chosen = null;
-        Dictionary lexicon = null;
+        ArrayDeque<Stack<String>> paths = new ArrayDeque<>();
+        Stack<String> ladder = new Stack<>();
+        ladder.push("cat");
+        paths.addFirst(ladder);
+        String des = "bat";
+        Dictionary chosen = new Dictionary();
+        Dictionary lexicon = new Dictionary();
+        lexicon.addWord("bat");
         WordLadder instance = new WordLadder();
-        Stack expResult = null;
+        Stack expResult = new Stack();
+        expResult.push("cat");
+        expResult.push("bat");
         Stack result = instance.ladder(paths, des, chosen, lexicon);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -67,15 +65,14 @@ public class WordLadderTest {
     public void testNewWord() {
         System.out.println("NewWord");
         int j = 0;
-        String frontWord = "";
-        int wordLength = 0;
-        char c = ' ';
+        String frontWord = "cat";
+        int wordLength = 3;
+        char c = 'b';
         WordLadder instance = new WordLadder();
-        String expResult = "";
+        String expResult = "bat";
         String result = instance.NewWord(j, frontWord, wordLength, c);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -84,14 +81,16 @@ public class WordLadderTest {
     @org.junit.Test
     public void testNewLadder() {
         System.out.println("newLadder");
-        String newWord = "";
-        Stack<String> Ladder = null;
+        String newWord = "bat";
+        Stack<String> Ladder = new Stack<>();
+        Ladder.push("cat");
         WordLadder instance = new WordLadder();
-        Stack<String> expResult = null;
+        Stack<String> expResult = new Stack<>();
+        expResult.push("cat");
+        expResult.push("bat");
         Stack<String> result = instance.newLadder(newWord, Ladder);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -100,11 +99,17 @@ public class WordLadderTest {
     @org.junit.Test
     public void testPrintResult() {
         System.out.println("printResult");
-        Stack<String> ladder = null;
+        Stack<String> ladder = new Stack<>();
+        ladder.push("bat");
+        ladder.push("cat");
+        Stack<String> expResult = new Stack<>();
+        expResult.push("cat");
+        expResult.push("bat");
+
         WordLadder instance = new WordLadder();
         instance.printResult(ladder);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult,instance.path);
     }
     
 }
