@@ -19,3 +19,11 @@
 * two ancillary methods hasWord and addWord providing interface to the Lexicon attribute.
 * `boolean hasWord(String word)`
 * `void addWord(String word)`
+
+### Unit Tests are implemented using JUnit 4, most methods in the two classes are tested.
+
+
+### To use this application:
+* Call this application with three commandline arguments: 1. Absolute path of the dictionary. 2. start of the ladder. 3. end of the ladder.(both words are to in lowercase)
+* The result will be printed in terminal.
+ 
