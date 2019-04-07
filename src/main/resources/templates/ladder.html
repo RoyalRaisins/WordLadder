@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>Wordladder</title>
+</head>
+<body>
+<form th:action="@{/ladder}" method="post">
+    <div>
+        <!--/*@thymesVar id="error" type=""*/-->
+        <span id="basic-addon0">&nbsp;</span>
+        <span style="font-size: 12px;color: red" th:text="${error}" aria-describedby="basic-addon0"></span>
+        <br />
+    </div>
+    <div>
+        <span id="basic-addon1">@</span>
+        <input id="user_name" name="path" type="text" placeholder="Dictionary absolute path" aria-describedby="basic-addon1" />
+
+    </div>
+    <br />
+    <div>
+        <span id="basic-addon2">@</span>
+        <input id="start" name="start" type="text" placeholder="start" aria-describedby="basic-addon2" />
+    </div>
+    <br />
+    <div>
+        <span id="basic-addon3">@</span>
+        <input id="end" name="end" type="text" placeholder="end" aria-describedby="basic-addon3" />
+    </div>
+    <br />
+    <button type="submit" style="width:190px;">GO</button>
+    <br/>
+    <p>Result:</p>
+    <span th:text="${ladderString}"></span>
+
+</form>
+</body>
+</html>
