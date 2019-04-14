@@ -11,12 +11,7 @@ import java.util.ArrayDeque;
 
 import javax.validation.Valid;
 
-/**
- * 页面登陆控制器
- * @Description:
- * @Author:libin
- * @Date: Created in 15:28 2017/11/13
- */
+
 @RestController
 @RequestMapping("/")
 public class LadderController {
@@ -50,6 +45,7 @@ public class LadderController {
             String output = w.LadderToString(result);
             modelAndView.addObject("ladderString",output);
             modelAndView.setViewName("ladder");
+            System.out.println(modelAndView.toString());
             return modelAndView;
         }
         catch(Exception e){
