@@ -1,10 +1,14 @@
 # Report on metrics of CPU and Memory utilization
 
 ![avatar](./2.png)
+Test 1
 ---
 ![avatar](./1.png)
+Test 1
 ---
 ![avatar](./3.png)
+Test 2
+---
 ## Testing method
 To obtain the result, I used postman to run two tests that send 1000 and 10000 post requests to application, 
 the request being "localhost:8080/ladder" with body being "path:D:/SE/dictionary.txt;start:code;end:data"
