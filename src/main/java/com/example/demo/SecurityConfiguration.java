@@ -1,4 +1,4 @@
-package com.example.demo;
+/*package com.example.demo;
 
 
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -21,6 +21,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http){
         try {
+            http.csrf().disable();
             super.configure(http);
         }
         catch (Exception e){
@@ -38,3 +39,5 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         }
     }
 }
+
+ */
