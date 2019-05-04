@@ -12,8 +12,6 @@ import javax.validation.constraints.Size;
  */
 public class RequestVo {
 
-    @NotEmpty(message="Empty path!")
-    private String path;
 
     @NotEmpty(message = "Empty word!")
     private String start;
@@ -21,14 +19,6 @@ public class RequestVo {
     @NotEmpty(message = "Empty word!")
     private String end;
 
-
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
 
 
     public String getStart() {

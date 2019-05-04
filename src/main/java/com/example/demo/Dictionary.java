@@ -11,6 +11,8 @@ package com.example.demo;
  * @author M S I
  */
 
+import org.springframework.core.io.ClassPathResource;
+
 import java.util.HashMap;
 import java.io.*;
 public class Dictionary {
@@ -32,18 +34,15 @@ public class Dictionary {
     Dictionary(String path){
         try {
             Lexicon = new HashMap<>();
-            File file = new File(path);
-            if(file.isFile() && file.exists()) {
-                InputStreamReader isr = new InputStreamReader(new FileInputStream(file));
+            ClassPathResource file = new ClassPathResource(path);
+                InputStreamReader isr = new InputStreamReader(file.getInputStream());
                 BufferedReader br = new BufferedReader(isr);
                 String lineTxt = "";
                 while ((lineTxt = br.readLine()) != null) {
                     addWord(lineTxt);
                 }
                 br.close();
-            } else {
-            System.out.println("文件不存在!");
-            }
+
         }
         catch (Exception e) {
             System.out.println("文件读取错误!");
