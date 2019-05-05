@@ -27,3 +27,5 @@ Password:12349876
 
 And redirect manually by typing 192.168.99.100:8083/ladder to the functional
 frontend page. It should be quite clear concerning what to do with the page.
+
+The dockerfiles are in the dockerfiles directory.
